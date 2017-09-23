@@ -17,7 +17,7 @@ dependencies {
 
 
 // gradle :api:clean :api:build :api:uploadArchives
-apply from: '../local-release.gradle'
+apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
 
 // gradle :api:clean :api:build :api:bintrayUpload
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'

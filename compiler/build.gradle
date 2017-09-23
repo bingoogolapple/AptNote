@@ -12,7 +12,7 @@ targetCompatibility = "1.7"
 
 
 // gradle :compiler:clean :compiler:build :compiler:uploadArchives
-apply from: '../local-release.gradle'
+apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
 
 // gradle :compiler:clean :compiler:build :compiler:bintrayUpload
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'
