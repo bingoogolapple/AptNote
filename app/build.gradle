@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.3.1'
+
+//    compile project(':annotation')
+//    compile project(':api')
+//    annotationProcessor project(':compiler')
+
+
+    compile 'cn.bingoogolapple:bga-aptnote-annotation:1.0.7'
+    compile 'cn.bingoogolapple:bga-aptnote-api:1.0.7'
+    annotationProcessor 'cn.bingoogolapple:bga-aptnote-compiler:1.0.7'
+}

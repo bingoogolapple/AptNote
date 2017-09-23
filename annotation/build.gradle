@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+
+// gradle :annotation:clean :annotation:build :annotation:uploadArchives
+apply from: '../local-release.gradle'
+
+// gradle :annotation:clean :annotation:build :annotation:bintrayUpload
+apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'
