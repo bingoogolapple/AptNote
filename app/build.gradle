@@ -13,14 +13,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support:appcompat-v7:27.0.1'
 
-//    compile project(':annotation')
-//    compile project(':api')
+//    implementation project(':api')
 //    annotationProcessor project(':compiler')
 
-
-    compile 'cn.bingoogolapple:bga-aptnote-annotation:1.0.7'
-    compile 'cn.bingoogolapple:bga-aptnote-api:1.0.7'
-    annotationProcessor 'cn.bingoogolapple:bga-aptnote-compiler:1.0.7'
+    implementation "cn.bingoogolapple:bga-aptnote-api:${VERSION_NAME}"
+    annotationProcessor "cn.bingoogolapple:bga-aptnote-compiler:${VERSION_NAME}"
 }

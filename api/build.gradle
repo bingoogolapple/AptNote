@@ -11,13 +11,16 @@ android {
 }
 
 dependencies {
-    provided 'com.android.support:appcompat-v7:25.3.1'
-    provided project(':annotation')
+    compileOnly 'com.android.support:appcompat-v7:27.0.1'
+
+    // api 中用 api 传递依赖
+//    api project(':annotation')
+    api "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
 }
 
 
-// gradle :api:clean :api:build :api:uploadArchives
+// ./gradlew :api:uploadArchives
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
 
-// gradle :api:clean :api:build :api:bintrayUpload
+// ./gradlew :api:clean :api:build :api:bintrayUpload
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'
