@@ -16,16 +16,18 @@ dependencies {
     // 发布到本地 repo 私服时
     // api 中用 api 传递依赖
 //    api project(':annotation')
-    api "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
+    // 发布完 annotation 后，改用依赖仓库里的 annotation 后再发布 compiler
+//    api "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
 
     // 发布到 jcenter 时
     // api 中用 compile 传递依赖，用 api 不会传递依赖
-//    compile project(':annotation')
+    compile project(':annotation')
+    // 发布完 annotation 后，改用依赖仓库里的 annotation 后再发布 compiler
 //    compile "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
 }
 
 
-// ./gradlew :annotation:clean :annotation:build :api:uploadArchives
+// ./gradlew :api:clean :api:build :api:uploadArchives
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
 
 // ./gradlew :api:clean :api:build :api:bintrayUpload
