@@ -8,7 +8,7 @@ sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
 
-// ./gradlew :annotation:uploadArchives
+// ./gradlew :annotation:clean :annotation:build :annotation:uploadArchives
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
 
 // ./gradlew :annotation:clean :annotation:build :annotation:bintrayUpload
