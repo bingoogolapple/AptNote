@@ -28,11 +28,11 @@ Gradle 3.x 插件，apt 打包上传学习笔记
 * api 中用 api 来依赖其他模块
 * 先发布 annotation，然后将 api 和 compiler 中对 annotation 的依赖改为依赖仓库里的，最后再发布 api 或 compiler
 * 开发期间，api 会传递依赖，implementation 不会传递依赖；发布后 api 和 implementation 都会传递依赖
-* 非 apt 场景：A 依赖 B，B 依赖 C
+* 场景：A 依赖 B，B 依赖 C
   * 如果想 A 不能直接使用 C，那么开发期间和发布时 B 依赖 C 都用 implementation（发布后 A 还是能直接使用 C 的，只是开发期间 A 不能直接使用 C，因为发布后 pom 中依赖 C 的节点都是 compile）
   * 如果想 A 能直接使用 C，那么开发期间和发布时 B 依赖 C 都用 api
-* Android 模块依赖其他模块时，用 api 和 implementation 最终生成的 pom 中的依赖节点都是 compile
-* Java 模块依赖其他模块时，用 implementation 最终生成的 pom 中的依赖节点是 runtime
+  * Android 模块依赖其他模块时，用 api 和 implementation 最终生成的 pom 中的依赖节点都是 compile
+  * Java 模块依赖其他模块时，用 implementation 最终生成的 pom 中的依赖节点是 runtime
 
 ## 发布到 jcenter
 
@@ -60,3 +60,8 @@ Gradle 3.x 插件，apt 打包上传学习笔记
 * compiler 中用 implementation
 * api 中用 compile
 * 先发布 annotation，然后将 api 和 compiler 中对 annotation 的依赖改为依赖仓库里的，最后再发布 api 或 compiler
+* 场景：A 依赖 B，B 依赖 C
+  * 如果想 A 不能直接使用 C，那么开发期间 B 依赖 C 用 implementation，发布时 B 依赖 C 用 compile
+  * 如果想 A 能直接使用 C，那么开发期间 B 依赖 C 用 api，发布时 B 依赖 C 用 compile
+  * Android 模块依赖其他模块时，用 api 和 implementation 最终生成的 pom 中都没有依赖节点
+  * Java 模块依赖其他模块时，用 implementation 最终生成的 pom 中的依赖节点是 runtime
