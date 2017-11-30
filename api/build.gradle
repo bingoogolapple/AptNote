@@ -14,7 +14,7 @@ dependencies {
     compileOnly 'com.android.support:appcompat-v7:27.0.1'
 
 //    implementation project(':test')
-    implementation "cn.bingoogolapple:bga-aptnote-test:${VERSION_NAME}"
+    compile "cn.bingoogolapple:bga-aptnote-test:${VERSION_NAME}"
 
     // 发布到本地 repo 和 nexus 私服时
     // api 中用 api 传递依赖
@@ -24,7 +24,7 @@ dependencies {
 
     // 发布到 jcenter 时
     // api 中用 compile 传递依赖，用 api 不会传递依赖
-//    compile project(':annotation')
+//    api project(':annotation')
     // 发布完 annotation 后，改用依赖仓库里的 annotation 后再发布 compiler
     compile "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
 }

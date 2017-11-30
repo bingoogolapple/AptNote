@@ -15,9 +15,9 @@ android {
 dependencies {
     implementation 'com.android.support:appcompat-v7:27.0.1'
 
-    implementation project(':api')
-    annotationProcessor project(':compiler')
+//    implementation project(':api')
+//    annotationProcessor project(':compiler')
 
-//    implementation "cn.bingoogolapple:bga-aptnote-api:${VERSION_NAME}"
-//    annotationProcessor "cn.bingoogolapple:bga-aptnote-compiler:${VERSION_NAME}"
+    implementation "cn.bingoogolapple:bga-aptnote-api:${VERSION_NAME}"
+    annotationProcessor "cn.bingoogolapple:bga-aptnote-compiler:${VERSION_NAME}"
 }
