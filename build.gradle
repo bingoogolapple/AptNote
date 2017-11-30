@@ -18,6 +18,9 @@ allprojects {
         maven {
             url uri('../repo')
         }
+        maven {
+            url 'http://localhost:8081/repository/maven-releases/'
+        }
         jcenter()
         google()
     }

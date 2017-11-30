@@ -9,7 +9,10 @@ targetCompatibility = "1.7"
 
 
 // ./gradlew :annotation:clean :annotation:build :annotation:uploadArchives
-apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
+//apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
+
+// ./gradlew :annotation:clean :annotation:build :annotation:uploadArchives
+apply from: rootProject.file('local-nexus-release.gradle')
 
 // ./gradlew :annotation:clean :annotation:build :annotation:bintrayUpload
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'

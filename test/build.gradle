@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion ANDROID_BUILD_TARGET_SDK_VERSION as int
+    }
+}
+
+// ./gradlew :test:clean :test:build :test:uploadArchives
+//apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
+
+// ./gradlew :test:clean :test:build :test:uploadArchives
+apply from: rootProject.file('local-nexus-release.gradle')
+
+// ./gradlew :test:clean :test:build :test:bintrayUpload
+apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'

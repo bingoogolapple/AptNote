@@ -9,6 +9,7 @@ import cn.bingoogolapple.aptnote.annotation.ExecutableAnnotation;
 import cn.bingoogolapple.aptnote.annotation.TypeAnnotation;
 import cn.bingoogolapple.aptnote.annotation.VariableAnnotation;
 import cn.bingoogolapple.aptnote.annotation.ioc.BindView;
+import cn.bingoogolapple.aptnote.api.TestWrapper;
 import cn.bingoogolapple.aptnote.api.ViewInjector;
 
 @TypeAnnotation("测试TypeAnnotation")
@@ -26,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewInjector.injectView(this);
-        mTestTv.setText("Annotation Processor");
-        mTestEt.setText("Annotation Processor");
+
+        mTestTv.setText("Annotation Processor " + getString(R.string.test));
+        mTestEt.setText("Annotation Processor " + TestWrapper.test("app"));
     }
 
     @ExecutableAnnotation("测试ExecutableAnnotation")

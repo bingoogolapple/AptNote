@@ -2,9 +2,9 @@ apply plugin: 'java'
 
 dependencies {
     // compiler 中用 implementation
-    implementation project(':annotation')
+//    implementation project(':annotation')
     // 发布完 annotation 后，改用依赖仓库里的 annotation 后再发布 compiler
-//    implementation "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
+    implementation "cn.bingoogolapple:bga-aptnote-annotation:${VERSION_NAME}"
 
     implementation 'com.google.auto.service:auto-service:1.0-rc3'
     implementation 'com.squareup:javapoet:1.9.0'
@@ -15,7 +15,10 @@ targetCompatibility = "1.7"
 
 
 // ./gradlew :annotation:clean :annotation:build :compiler:uploadArchives
-apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
+//apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/local-release.gradle'
+
+// ./gradlew :annotation:clean :annotation:build :compiler:uploadArchives
+apply from: rootProject.file('local-nexus-release.gradle')
 
 // ./gradlew :compiler:clean :compiler:build :compiler:bintrayUpload
 apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'

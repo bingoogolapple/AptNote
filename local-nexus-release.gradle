@@ -1,0 +1,16 @@
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+            repository(url: 'http://localhost:8081/repository/maven-releases/') {
+                authentication(userName: 'admin', password: 'admin123')
+            }
+
+            pom.version = VERSION_NAME
+            pom.artifactId = PUBLISH_AAR_ARTIFACT_ID
+            pom.groupId = "cn.bingoogolapple"
+        }
+    }
+}
